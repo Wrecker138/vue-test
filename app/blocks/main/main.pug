@@ -1,0 +1,47 @@
+.main
+
+	.container
+		a.button.get-popup(data-popup="add")
+			span.button__text Добавить
+
+	.table
+		.table__row
+			.table__cell Наименование
+			.table__cell Адрес
+			.table__cell ОГРН
+			.table__cell ИНН
+			.table__cell Дата регистрации
+		.table__row(v-for="(row, index) in table" :index="index")
+			.table__cell {{row.name}}
+			.table__cell
+				textarea(type="text" v-model="row.address")
+			.table__cell {{row.ogrn}}
+			.table__cell {{row.inn}}
+			.table__cell {{row.date}}
+			.table__cell.table__cell--remover(:index="index")
+				a(title="Удалить" @click="deleteRow(index)")
+					img(src="assets/images/close.svg", alt="")
+	.container
+		a.button(@click="loadInfo()")
+			.button__text Загрузить
+
+	include ../popup/popup
+	+popup('add')
+		form.form(v-on:submit.prevent="addRow")
+			label.form__block
+				span.form__label Наименование
+				input(type="text",name="name").form__input
+			label.form__block
+				span.form__label Адрес
+				input(type="text",name="address").form__input
+			label.form__block
+				span.form__label ОГРН
+				input(type="tel",name="ogrn").form__input
+			label.form__block
+				span.form__label ИНН
+				input(type="tel",name="inn").form__input
+			label.form__block
+				span.form__label Дата регистрации
+				input(type="text",name="date").form__input
+
+			button.button(type="submit") Добавить

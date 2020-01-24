@@ -1,0 +1,53 @@
+head
+	//- Кодировка
+	meta(charset='utf-8')
+
+	//- Вьюпорт, если есть мобильная версия
+	//- meta(name='viewport' content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0")
+
+	//- Включаем последний режим IE
+	meta(http-equiv='X-UA-Compatible' content='IE=edge')
+
+	//- Mobile Internet Explorer позволяет принудительно активировать технологию ClearType для сглаживания шрифтов
+	meta(name='cleartype' content='on')
+	meta(name='format-detection', content='telephone=no')
+	meta(name='format-detection', content='date=no')
+	meta(name='format-detection', content='address=no')
+	meta(name='format-detection', content='email=no')
+	meta(content='notranslate', name='google')
+
+	//- Этот мета-тег необходим для того, чтобы приложение открылось в полноэкранном режиме
+	meta(name='apple-mobile-web-app-capable' content='yes')
+
+	//- Корректируем верхнюю полоску в iPhone
+	meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+
+	//- Фавиконки и описание
+	//- http://realfavicongenerator.net
+	//- link(rel="apple-touch-icon", sizes="180x180", href="assets/favicons/apple-touch-icon.png")
+	//- link(rel="icon", type="image/png", sizes="32x32", href="assets/favicons/favicon-32x32.png")
+	//- link(rel="icon", type="image/png", sizes="16x16", href="assets/favicons/favicon-16x16.png")
+	//- link(rel="manifest", href="assets/favicons/site.webmanifest")
+	//- link(rel="mask-icon", href="assets/favicons/safari-pinned-tab.svg", color="#2c9f3c")
+	//- link(rel="shortcut icon", href="assets/favicons/favicon.ico")
+	meta(name="apple-mobile-web-app-title", content="")
+	meta(name="application-name", content="")
+	//- meta(name="msapplication-config", content="/favicons/browserconfig.xml")
+	meta(name="theme-color", content="#ffffff")
+
+
+
+	block head
+	title= pageTitle || ''
+	meta(name='description' content=pageDescription || '')
+	meta(name='keywords' content=pageKeywords || '')
+
+	link(href='assets/styles/app.min.css' rel='stylesheet')
+	link(href='assets/styles/fonts.css' rel='stylesheet')
+
+	script(type='text/javascript').
+		// Фича чтобы метод forEach работал в Эдже
+		(function () {
+		if ( typeof NodeList.prototype.forEach === "function" ) return false;
+		NodeList.prototype.forEach = Array.prototype.forEach;
+		})();

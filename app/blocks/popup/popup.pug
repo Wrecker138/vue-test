@@ -1,0 +1,27 @@
+mixin popup(name)
+	.popup(data-popup=name)
+		.popup__overlay
+		.popup__wrapper
+			.popup__content
+				a.popup__close(href="javascript://")
+				if block
+					block
+
+
+mixin popup-response(name)
+	.popup.popup--response(data-popup=name)
+		.popup__overlay
+		.popup__wrapper
+			.popup__content
+				a.popup__close(href="javascript://")
+				if block
+					block
+
+mixin popup-offer(name)
+	.popup.popup--offer(data-popup=name,data-type="offer")
+		.popup__overlay
+		.popup__wrapper
+			.popup__content
+				a.popup__close(href="javascript://")
+				if block
+					block

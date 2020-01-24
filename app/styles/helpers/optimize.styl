@@ -1,0 +1,111 @@
+*
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+
+*::-moz-focus-inner
+	padding: 0;
+	border: 0;
+
+img
+	vertical-align: top;
+	width 100%
+	object-fit: cover
+
+
+address
+	font-style: normal;
+
+ul,
+ol,
+li
+	list-style: none;
+
+a
+	text-decoration: none;
+	transition all .3s
+	cursor pointer
+
+input
+textarea
+	border-radius: 0;
+	box-shadow: none;
+
+
+.clearfix:before,
+.clearfix:after
+	content: '';
+	display: table;
+
+.clearfix:after
+	clear: both;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary
+	display: block;
+
+audio,
+canvas,
+progress,
+video
+	display: inline-block;
+
+sub,
+sup
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+sub
+	bottom: -0.25em;
+
+sup
+	top: -0.5em;
+
+button,
+input,
+optgroup,
+select,
+textarea
+	font: inherit;
+	margin: 0;
+
+::-webkit-input-placeholder
+	color: inherit;
+	opacity: 0.54;
+
+input
+	&[type="text"],
+	&[type="tel"],
+	&[type="email"]
+		appearance none
+		-moz-appearance: none
+		-webkit-appearance: none
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+	// border: 1px solid alpha($c-text-active, .3)
+	-webkit-text-fill-color:#000
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset;
+	transition: background-color 5000s ease-in-out 0s;

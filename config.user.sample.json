@@ -1,0 +1,26 @@
+{
+	"startServer": true,
+	"src": {
+		"templates": "app/pages/*.pug",
+		"scripts": ["app/scripts/libs/*.js", "app/scripts/*.js", "app/blocks/**/*.js"],
+		"fonts": "app/fonts/*.{otf,ttf,woff,woff2}",
+		"styles": "app/styles/app.styl",
+		"favicons": "app/favicons/*.+(png|ico|svg|xml|json)",
+		"images": "app/images/**/*.+(png|jpg|jpeg|gif|svg)"
+	},
+	"watch": {
+		"templates": "app/{pages,blocks}/**/*.pug",
+		"scripts": "app/{scripts,blocks}/**/*.js",
+		"fonts": "app/fonts/*.{otf,ttf,woff,woff2}",
+		"styles": "app/{styles,blocks}/**/*.styl",
+		"favicons": "app/favicons/*.+(png|ico|svg|xml|json)",
+		"images": "app/images/**/*.+(png|jpg|jpeg|gif|svg)"
+	},
+	"dist": {
+		"html": "./dist/",
+		"images": "./dist/assets/images/",
+		"scripts": "./dist/assets/scripts/",
+		"styles": "./dist/assets/styles/",
+		"favicons": "./dist/assets/favicons/"
+	}
+}

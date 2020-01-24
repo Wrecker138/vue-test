@@ -1,0 +1,53 @@
+clearfix()
+	&:before,
+	&:after
+		content: '';
+		display: table;
+	&:after
+		clear: both;
+
+fullfake()
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+row()
+	width 100%
+	max-width 1360px
+	margin 0 auto
+
+// миксин для динамичного масштабирования заголовков
+// S - начальные точки, E - конечные
+// fs - font-size,lh-line-height, w - ширины экранов
+//  https://habr.com/ru/post/310186/ - ссылка откуда позаимствована формула
+
+textSizing($fsS,$lhS,$fsE,$lhE,$wS,$wE)
+	font-size: unit($fsS, 'px')
+	line-height: unit($lhS, 'px')
+	@media (max-width: unit($wS, 'px'))
+		$gDiff = '(100vw - %s)' % unit($wE, 'px');
+		$wDiff = ($wS - $wE);
+		$fsDiff = ($fsS - $fsE);
+		$lhDiff = ($lhS - $lhE);
+		$fsF = s('calc(%s / %s  * %s + %s)',$gDiff, $wDiff, $fsDiff, unit($fsE, 'px'))
+		$lhF = s('calc(%s / %s  * %s + %s)',$gDiff, $wDiff, $lhDiff, unit($lhE, 'px'))
+
+		font-size: $fsF
+		line-height: $lhF
+
+backimage()
+	background-size cover
+	background-position center
+	background-repeat no-repeat
+
+flex-center()
+	display flex
+	justify-content center
+
+flex-spread()
+	display: flex;
+	align-items: center;
+	justify-content: space-between

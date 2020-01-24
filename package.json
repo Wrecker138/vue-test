@@ -1,0 +1,54 @@
+{
+  "name": "pxl-pro",
+  "version": "1.0.0",
+  "description": "",
+  "author": "PXL PRO",
+  "license": "ISC",
+  "scripts": {
+    "start": "NODE_ENV=dev node ./node_modules/gulp/bin/gulp.js",
+    "build": "NODE_ENV=prod&&node ./node_modules/gulp/bin/gulp.js build",
+    "start_win": "set NODE_ENV=dev&&node ./node_modules/gulp/bin/gulp.js",
+    "build_win": "set NODE_ENV=prod&&node ./node_modules/gulp/bin/gulp.js build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.7",
+    "css-loader": "^1.0.1",
+    "del": "^2.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-cache": "^1.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-font2css": "^0.1.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-rev-delete-original": "^0.2.3",
+    "gulp-rev-replace": "^0.4.4",
+    "gulp-rev-rewrite": "^1.1.4",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uncss": "1.0.6",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.1",
+    "portfinder": "^1.0.20",
+    "pug": "^2.0.4",
+    "require-dir": "^1.2.0",
+    "run-sequence": "^1.2.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
